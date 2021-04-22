@@ -1,0 +1,82 @@
+---
+title: "Visualize Data"
+output: html_notebook
+---
+
+```{r setup}
+library(tidyverse)
+library(geoscidata)
+```
+
+```{r}
+warwick
+```
+
+
+## Your Turn 1
+
+Run the code on the slide to make a graph. Pay strict attention to spelling, capitalization, and parentheses!
+
+```{r}
+
+```
+
+## Your Turn 2
+
+Add `color`, `size`, `alpha`, and `shape` aesthetics to your graph. Experiment.  
+
+```{r}
+ggplot(data = warwick) +
+  geom_point(mapping = aes(x = Rb_ppm, y = K_ppm))
+```
+
+## Your Turn 3
+
+Replace this scatterplot with one that draws boxplots. Use the cheatsheet. Try your best guess.
+
+```{r}
+ggplot(warwick) + 
+  geom_point(aes(rock_name, K_ppm))
+```
+
+## Your Turn 4
+
+Make a histogram of the `K_ppm` variable from `warwick`.
+
+```{r}
+
+```
+
+## Your Turn 5
+
+Make a density plot of `K_ppm` colored by `rock_type`.
+
+```{r}
+
+```
+
+## Your Turn 6
+
+Predict what this code will do. Then run it.
+
+```{r}
+ggplot(warwick) + 
+  geom_point(aes(Rb_ppm, K_ppm)) +
+  geom_smooth(aes(Rb_ppm, K_ppm))
+```
+
+***
+
+# Take aways
+
+You can use this code template to make thousands of graphs with **ggplot2**.
+
+```{r eval = FALSE}
+ggplot(data = <DATA>) +
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+```
+
+# More practice
+
+- The [Data Visualization](https://r4ds.had.co.nz/data-visualisation.html) chapter of [R for Data Science](https://r4ds.had.co.nz/)
+- The [Data Visualization Primers](https://rstudio.cloud/learn/primers/3) from [RStudio Cloud](http://rstudio.cloud)

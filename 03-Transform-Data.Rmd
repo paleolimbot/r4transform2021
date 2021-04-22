@@ -1,0 +1,170 @@
+---
+title: "Transform Data"
+output: html_notebook
+---
+
+```{r setup}
+library(tidyverse)
+library(babynames)
+```
+
+## babynames
+
+```{r}
+babynames
+```
+
+## Your Turn 1
+
+Alter the code to select just the `n` column:
+
+```{r}
+select(babynames, name, prop)
+```
+
+## Quiz
+
+Which of these is NOT a way to select the `name` and `n` columns together?
+
+```{r}
+select(babynames, -c(year, sex, prop))
+select(babynames, name:n)
+select(babynames, starts_with("n"))
+select(babynames, ends_with("n"))
+```
+
+## Your Turn 2
+
+Show:
+
+* All of the names where prop is greater than or equal to 0.08  
+* All of the children named "Sea"  
+* All of the names that have a missing value for `n`  
+
+```{r}
+filter(babynames, is.na(n))
+
+```
+
+## Your Turn 3
+
+Use Boolean operators to alter the code below to return only the rows that contain:
+
+* Girls named Sea  
+* Names that were used by exactly 5 or 6 children in 1880  
+* Names that are one of Acura, Lexus, or Yugo
+
+```{r}
+filter(babynames, name == "Sea" | name == "Anemone")
+```
+
+## Your Turn 4
+
+Arrange babynames by `n`. Add `prop` as a second (tie breaking) variable to arrange on. Can you tell what the smallest value of `n` is?
+
+```{r}
+
+```
+
+## Your Turn 5
+
+Use `desc()` to find the names with the highest prop.
+Then, use `desc()` to find the names with the highest n.
+
+```{r}
+
+```
+
+## Your Turn 6
+
+Use `%>%` to write a sequence of functions that: 
+
+1. Filter babynames to just the girls that were born in 2015  
+2. Select the `name` and `n` columns  
+3. Arrange the results so that the most popular names are near the top.
+
+```{r}
+
+```
+
+## Exam
+
+1. Trim `babynames` to just the rows that contain your `name` and your `sex`  
+2. Trim the result to just the columns that will appear in your graph (not strictly necessary, but useful practice)  
+3. Plot the results as a line graph with `year` on the x axis and `prop` on the y axis
+
+```{r}
+
+```
+
+## Your Turn 7
+
+Use summarise() to compute three statistics about the data:
+
+1. The first (minimum) year in the dataset  
+2. The last (maximum) year in the dataset  
+3. The total number of children represented in the data
+
+```{r}
+
+```
+
+## Your Turn 8
+
+Extract the rows where `name == "Khaleesi"`. Then use `summarise()` and a summary functions to find:
+
+1. The total number of children named Khaleesi
+2. The first year Khaleesi appeared in the data
+
+```{r}
+
+```
+
+## Your Turn 9
+
+Use `group_by()`, `summarise()`, and `arrange()` to display the ten most popular names. Compute popularity as the total number of children of a single gender given a name.
+
+```{r}
+
+```
+
+## Your Turn 10
+
+Use grouping to calculate and then plot the number of children born each year over time.
+
+```{r}
+
+```
+
+## Your Turn 11
+
+Fill in the blanks to convert the K and Fe columns from parts per million to percent (divide by 10,000), then plot the two columns on the X and Y axes using `geom_point()`.
+
+```{r}
+library(geoscidata)
+
+warwick %>%
+  mutate(K_percent = ________, Fe_percent = ___________) %>%
+  filter(rock_name == "basalt") %>%
+  ggplot() +
+  geom_point(aes(x = ________, y = __________))
+```
+
+***
+
+# Take aways
+
+* Extract variables with `select()`  
+* Extract cases with `filter()`  
+* Arrange cases, with `arrange()`  
+
+* Make tables of summaries with `summarise()`  
+* Make new variables, with `mutate()`  
+* Do groupwise operations with `group_by()`
+
+* Connect operations with `%>%`  
+
+# More practice
+
+- The [Data Transformation](https://r4ds.had.co.nz/transform.html) chapter of [R for Data Science](https://r4ds.had.co.nz/)
+- The [Working With Data Primers](https://rstudio.cloud/learn/primers/2) from [RStudio Cloud](http://rstudio.cloud)

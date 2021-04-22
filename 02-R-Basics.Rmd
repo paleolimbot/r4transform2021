@@ -1,0 +1,38 @@
+---
+title: "R Basics"
+output: html_notebook
+---
+
+```{r setup}
+library(tidyverse)
+```
+
+## Your Turn 1
+
+Modify the `range` argument in this call to `read_excel()` to read different regions of the sheet.
+
+```{r}
+library(readxl)
+warwick_xl <- read_excel("warwick.xlsx", sheet = "Sheet1", range = "A1:AR1845")
+warwick_xl
+```
+
+## Your Turn 2
+
+Use the `read_csv()` function to read "warwick.csv" and assign it to the `warwick_csv` variable.
+
+```{r}
+
+```
+
+***
+
+# Take Aways
+
+- Read functions start with `read_*()` and include `readxl::read_excel()`, `read_csv()`, and `read_tsv()`.
+
+# More Practice
+
+- The [Workflow: Basics](https://r4ds.had.co.nz/workflow-basics.html) chapter of [R for Data Science](https://r4ds.had.co.nz).
+- The [Data import](https://r4ds.had.co.nz/data-import.html) chapter of [R for Data Science](https://r4ds.had.co.nz).
+- The [Programming Basics](https://rstudio.cloud/learn/primers/1.2) primer from [RStudio Cloud](https://rstudio.cloud/).
