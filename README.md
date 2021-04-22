@@ -12,7 +12,7 @@ If you prefer, you can also run this tutorial locally. The steps for this are:
 
 1. Install R if you haven't already ([Windows](https://cloud.r-project.org/bin/windows/), [MacOS](https://cloud.r-project.org/bin/macosx/), [Linux](https://cloud.r-project.org/bin/linux/))
 2. Install [RStudio](https://www.rstudio.com/products/rstudio/download/#download)
-3. Download the material by clicking the green __Clone or download__ button above. (Then click __Download Zip__ in the tab that appears). Unzip the file anywhere on your computer and double-click on the "r4transform2021.Rproj" button to launch RStudio. You will have to all of the lines in INSTALL.R to make sure all the package you need are installed.
+3. Download the material by clicking the green __Clone or download__ button above. (Then click __Download Zip__ in the tab that appears). Unzip the file anywhere on your computer and double-click on the "r4transform2021.Rproj" button to launch RStudio. You will have to run all of the lines in INSTALL.R to make sure all the package you need are installed.
 
 Resources for future learning:
 
